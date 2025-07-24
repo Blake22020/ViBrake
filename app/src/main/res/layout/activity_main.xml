@@ -28,137 +28,131 @@
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:padding="16dp"
+        android:rowCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:rowCount="3"
-        android:columnCount="3"
-        android:columnGap="16dp"
-        android:rowGap="16dp"
-        android:padding="16dp" >
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
 
         <Button
             android:id="@+id/btn1"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="1"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="2"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="3"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn4"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="4"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn5"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="5"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn6"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="6"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn7"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="7"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"/>
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn8"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="8"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"
-            />
+            tools:layout_editor_absoluteY="258dp" />
 
         <Button
             android:id="@+id/btn9"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:backgroundTint="#A8A6A6"
             android:fontFamily="@font/jetbrains_mono_bold"
             android:text="9"
+            android:textColor="#000"
             android:textSize="50sp"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="258dp"
-            android:textColor="#000"
-            android:backgroundTint="#A8A6A6"
-            />
-
-
+            tools:layout_editor_absoluteY="258dp" />
 
 
     </GridLayout>

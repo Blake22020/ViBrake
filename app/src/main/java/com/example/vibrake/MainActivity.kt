@@ -1,15 +1,12 @@
 package com.example.vibrake
 
 import android.content.Context
-import android.os.Build
-import android.os.Bundle
+import android.os.*
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.os.*
-import kotlin.contracts.Effect
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,62 +14,59 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        setup()
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setupButtons()
     }
 
     private fun vibrate(milliseconds: Long, amplitude: Int) {
         val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-
             vibratorManager.defaultVibrator
         } else {
             @Suppress("DEPRECATION")
             getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         }
 
-        if (!vibrator.hasVibrator()) {
-            return
-        }
+        if (!vibrator.hasVibrator()) return
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val Effect = VibrationEffect.createOneShot(
-                milliseconds,
-                amplitude.coerceIn(1, 255)
-            )
-            vibrator.vibrate(Effect)
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val effect = VibrationEffect.createOneShot(
+                    milliseconds,
+                    amplitude.coerceIn(1, 255)
+                )
+                vibrator.vibrate(effect)
+            } else {
+                @Suppress("DEPRECATION")
+                vibrator.vibrate(milliseconds)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-        else{
-            @Suppress("DEPRECATION")
-            vibrator.vibrate(milliseconds)
-        }
-
     }
 
-    private fun setup() {
+    private fun setupButtons() {
         val buttons = listOf(
-            findViewById<Button>(R.id.btn1) to 30,
-            findViewById<Button>(R.id.btn2) to 60,
-            findViewById<Button>(R.id.btn3) to 90,
-
-            findViewById<Button>(R.id.btn4) to 120,
-            findViewById<Button>(R.id.btn5) to 150,
-            findViewById<Button>(R.id.btn6) to 180,
-
-            findViewById<Button>(R.id.btn7) to 210,
-            findViewById<Button>(R.id.btn8) to 240,
-            findViewById<Button>(R.id.btn9) to 255,
+            R.id.btn1 to 30,
+            R.id.btn2 to 60,
+            R.id.btn3 to 90,
+            R.id.btn4 to 120,
+            R.id.btn5 to 150,
+            R.id.btn6 to 180,
+            R.id.btn7 to 210,
+            R.id.btn8 to 240,
+            R.id.btn9 to 255
         )
 
-        buttons.forEach{(button, amplitude) -> {
-            button.setOnClickListener {
-                vibrate(2000, amplitude)
+        buttons.forEach { (buttonId, amplitude) ->
+            findViewById<Button>(buttonId).setOnClickListener {
+                vibrate(1000, amplitude)
             }
-        }}
+        }
     }
 }
