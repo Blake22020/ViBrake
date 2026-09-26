@@ -1,6 +1,14 @@
 name: Build Roboto Bold Installer
 
 on:
+  push:
+    branches:
+      - build/roboto-bold-installer-20260926
+    paths:
+      - 'robotoInstaller/**'
+      - 'fontPackage/**'
+      - 'settings.gradle.kts'
+      - '.github/workflows/roboto-bold-installer.yml'
   pull_request:
     branches: [ master ]
     paths:
