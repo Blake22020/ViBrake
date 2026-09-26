@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ViBrake"
 include(":app")
+include(":fontPackage")
+include(":robotoInstaller")
